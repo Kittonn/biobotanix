@@ -4,11 +4,6 @@ from .utils.torch_utils import get_prediction
 
 app = FastAPI()
 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
-
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 @app.get("/")
 async def read_root():
     return {"message": "This is biobotanix API."}
