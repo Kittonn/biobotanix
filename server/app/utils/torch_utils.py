@@ -37,13 +37,12 @@ model.eval()
 def transform_image(image_bytes):
     transform = transforms.Compose([transforms.Resize((224, 224)),
                                     transforms.ToTensor(),
-                                    transforms.Normalize((0.5, 0.5, 0.5),
-                                                         (0.5, 0.5, 0.5))])
+                                    transforms.Normalize([0.485, 0.456, 0.406], 
+                                                         [0.229, 0.224, 0.225])])
     image = Image.open(io.BytesIO(image_bytes))
     return transform(image).unsqueeze(0)
 
 def get_prediction(image_bytes):
-    # return classname
     tensor = transform_image(image_bytes=image_bytes)
     outputs = model.forward(tensor)
     _, y_hat = outputs.max(1)
