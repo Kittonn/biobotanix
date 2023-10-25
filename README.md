@@ -1,8 +1,8 @@
 # biobotanix
 
-- [Model](./model/)
-- [API](./server/)
-- [Website](./web/)
+- [Model](./model/) : Contains the model of the project
+- [API](./server/) : Contains the API of the project
+- [Website](./web/) : Contains the website of the project
 
 ## How to run the project
 
