@@ -19,4 +19,3 @@ async def predict(file: UploadFile):
         return {"prediction": prediction}
     else:
         raise HTTPException(status_code=400, detail="File not found or invalid file type.")
-    
